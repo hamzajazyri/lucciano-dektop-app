@@ -1,0 +1,25 @@
+<div class="page">
+
+    <div class="page-content">
+        <div class="folder-container">
+            @if(workspaceSrv.currentWorkspaceFolders() != null) {
+                @for (item of workspaceSrv.currentWorkspaceFolders()!.files; track $index) {
+                    <div class="folder-item" [ngClass]="$index == currentFolderIndex() ? 'selected': ''" (click)="getFolderItems(item, $index)">{{item.name}}</div>
+                }
+            }
+        </div>
+        <div class="music-container">
+            <!-- {{workspaceSrv.workspace() | json}} -->
+
+            <!-- {{workspaceSrv.currentWorkspaceFolders() | json}} -->
+
+            @for (item of workspaceSrv.folderMusic | async; track $index) {
+                <!-- {{item | json}} -->
+                <app-music-item [audioUrl]="item.path"></app-music-item>
+                
+            }
+        </div>
+    </div>
+
+</div>
+

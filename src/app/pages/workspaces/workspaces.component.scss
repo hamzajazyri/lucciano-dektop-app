@@ -1,0 +1,66 @@
+.workspace-main {
+    padding:20px;
+    height: 100%;
+}
+
+.page-title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.workspace-items {
+    list-style: none;
+    margin: 0;
+    padding:7px;
+    margin:17px 0;
+    max-height: calc(100vh - 175px);
+    overflow-y: auto;
+    .workspace-item {
+        background: #eee;
+        padding:13px;
+        border-radius: 14px;
+        margin-bottom: 3px;
+        cursor: pointer;
+        &:hover {
+            background:rgb(158, 158, 255);
+        }
+        .workspace-name {
+            font-weight: bold;
+            margin-bottom: 4px;
+            font-size: 17px;
+        }
+        .workspace-path {
+            color:#757575;
+            font-size: 13px;
+        }
+    }
+}
+
+
+:host {
+    height: 100%;
+}
+.workspace-new {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &.empty {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    button {
+        width: 250px;
+        color:#fff;
+        font-weight: bold;
+        letter-spacing: 1.3px;
+        height: 47px;
+        border-radius: 7px;
+        background: rgb(30, 30, 163);
+        outline: none;
+        border:0;
+        cursor: pointer;
+    }
+}

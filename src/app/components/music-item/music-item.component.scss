@@ -1,0 +1,44 @@
+#waveformContainer {
+    width: 100%;
+    height: 20px;
+}
+
+.song-name {
+    font-size: 14px;
+    font-weight: 500;
+}
+.wave-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+
+    svg {
+        width: 22px;
+        cursor: pointer;
+    }
+
+    .notes {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .controls {
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 5px;
+    }
+}
+
+
+.example-chip-list {
+    width: 100%;
+}
+
+
+.music-item-container {
+    padding: 15px;
+}

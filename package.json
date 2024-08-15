@@ -1,0 +1,60 @@
+{
+  "name": "lucciano",
+  "version": "0.0.0",
+  "main": "main.js",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "electron": "ng build --base-href ./ -c production && electron .",
+    "build": "ng build --base-href ./",
+    "build:prod": "npm run build -- -c production",
+    "electron-build": "npm run build:prod && electron-builder build --publish=never --win --linux"
+  },
+  "build": {
+    "appId": "com.jazyri.noteFiles",
+    "files": [
+      "dist/lucciano",
+      "main.js",
+      "*.js",
+      "*.db"
+    ],
+    "afterPack": "./build/after-pack.js"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^18.1.0",
+    "@angular/cdk": "^18.1.4",
+    "@angular/common": "^18.1.0",
+    "@angular/compiler": "^18.1.0",
+    "@angular/core": "^18.1.0",
+    "@angular/forms": "^18.1.0",
+    "@angular/material": "^18.1.4",
+    "@angular/platform-browser": "^18.1.0",
+    "@angular/platform-browser-dynamic": "^18.1.0",
+    "@angular/router": "^18.1.0",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "rxjs": "~7.8.0",
+    "sqlite3": "^5.1.7",
+    "tslib": "^2.3.0",
+    "wavesurfer.js": "^7.8.2",
+    "zone.js": "~0.14.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.1.4",
+    "@angular/cli": "^18.1.4",
+    "@angular/compiler-cli": "^18.1.0",
+    "@types/jasmine": "~5.1.0",
+    "electron": "^31.3.1",
+    "electron-builder": "^24.13.3",
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.5.2"
+  }
+}

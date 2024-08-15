@@ -1,0 +1,30 @@
+<div class="workspace-main">
+    @if(workspaceSrv.workspaces().length > 0) {
+        <div class="workspace-list">
+            <h2 class="page-title">Workspaces</h2>
+            <ul class="workspace-items">
+                @for (item of workspaceSrv.workspaces(); track $index) {
+                    <li class="workspace-item" (click)="navigateToWorkspaceDetail(item.id)">
+                        <div>
+                            <div class="workspace-name"><b>{{item.workspaceName}}</b></div>
+                            <i class="workspace-path">{{item.path}}</i>
+                        </div>
+                    </li>    
+                }
+            </ul>
+        </div>
+    }
+    
+    
+    <div class="workspace-new" [ngClass]="workspaceSrv.workspaces().length === 0 ? 'empty' :''">
+        <button (click)="workspaceNewPopupOpen.set( !workspaceNewPopupOpen() )">Add new Workspace</button>
+    </div>
+    
+    
+    
+    @if( workspaceNewPopupOpen() ) {
+        <div class="modal">
+            <app-workspace-new-popup (uClose)="workspaceNewPopupOpen.set(false)"></app-workspace-new-popup>
+        </div>
+    }
+</div>
